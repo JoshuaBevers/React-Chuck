@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Quote quote={quote} />
+        <Quote />
       </header>
     </div>
   );

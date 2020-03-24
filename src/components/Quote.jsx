@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import logo from "./Chuck.jpeg";
 
 class Quote extends Component {
+  state = {
+    quote: "this is the quote."
+  };
+
   render() {
+    const { quote } = this.state;
     return (
       <div>
         <div className="wrapper">
@@ -18,7 +23,7 @@ class Quote extends Component {
           <button type="button" id="submitForm">
             Submit
           </button>
-          <h1>The quote is: {this.props.quote}</h1>
+          <h1>The quote is: {quote}</h1>
         </form>
       </div>
     );
