@@ -6,6 +6,21 @@ class Quote extends Component {
     quote: "this is the quote."
   };
 
+  async componentDidMount() {
+    console.log("the quote component was mounted in JS.");
+    try {
+      const response = await fetch(
+        `https://api.chucknorris.io/jokes/random?category=dev`
+      );
+      const data = await response.json();
+      this.setState({ quote: data.value });
+    } catch (e) {
+      console.log(e.message);
+      this.setState({ quote: e.message });
+      return e;
+    }
+  }
+
   render() {
     const { quote } = this.state;
     return (
